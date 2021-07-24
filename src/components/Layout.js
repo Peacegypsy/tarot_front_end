@@ -4,13 +4,13 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import '../App.css';
 
-// axios.get(`${process.env.REACT_APP_BACKEND_URL}/boards`, {
-// ..
-const apiUrl = 'http://localhost:5000/layout/paw';
+
+
+
 function PawLayout() {
     const [cardsData, setCardsData] = useState([]);
     useEffect(() => {
-        axios.get(apiUrl)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/layout/paw`)
             .then(response => {
                 console.log(response.data[0])
                 setCardsData(response.data)
@@ -25,7 +25,7 @@ function PawLayout() {
             <div className='paw-layout'>
                 <ul>
                     {cardsData.map(card =>
-                        (<li key="{card.card_id}">{card.name}</li>))}
+                        (<li key={card.id}>{card.name} {card.general}</li>))}
                 </ul>
                 <div></div>
             </div>
