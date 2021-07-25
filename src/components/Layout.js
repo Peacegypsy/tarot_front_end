@@ -25,7 +25,7 @@ function PawLayout() {
             <div className='paw-layout'>
                 <ul>
                     {cardsData.map(card =>
-                        (<li key={card.id}>{card.name} {card.general}</li>))}
+                        (<li key={card.card_id}>{card.card_name} {card.card_general} <img src={"https://cat-tarot-cards.herokuapp.com/" + card.card_image_location} ></img></li>))}
                 </ul>
                 <div></div>
             </div>

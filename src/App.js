@@ -10,7 +10,7 @@ function App() {
         <h2>Wisdom from the Cat Realm</h2>
       </header>
       <section className='layout-area'>
-        <div>Cards will be here </div>
+        <div></div>
         <PawLayout />
       </section>
     </div>
