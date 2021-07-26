@@ -7,12 +7,12 @@ import '../App.css';
 
 
 
+
 function PawLayout() {
     const [cardsData, setCardsData] = useState([]);
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_BACKEND_URL}/layout/paw`)
             .then(response => {
-                console.log(response.data[0])
                 setCardsData(response.data)
             })
             .catch((error) => {
@@ -23,11 +23,10 @@ function PawLayout() {
     return (
         <div>Cards:
             <div className='paw-layout'>
-                <ul>
-                    {cardsData.map(card =>
-                        (<li key={card.card_id}>{card.card_name} {card.card_general} <img src={"https://cat-tarot-cards.herokuapp.com/" + card.card_image_location} ></img></li>))}
-                </ul>
-                <div></div>
+                <ol className="wrapper">   {cardsData.map((card, index) => (
+                    <li key={index} className={'box' + ' ' + 'a' + index}>{card.card_name} </li>
+                ))}
+                </ol>
             </div>
         </div>
     )

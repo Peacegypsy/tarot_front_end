@@ -10,7 +10,8 @@ const Card = ({ card, flipCard }) => {
                 {card.card_name,
                     card.card_general,
                     card.card_upright,
-                    card.card_reversed}
+                    card.card_reversed,
+                    card.card_image_location}
                 <span onClick={onFlipCard}>Flip Card</span>
             </div>
         </div>
