@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Card from './components/Card'
 import PawLayout from './components/Layout'
+import CardsLayout from './components/CardsLayout';
 
 function App() {
   return (
@@ -10,9 +11,11 @@ function App() {
         <h2>Wisdom from the Cat Realm</h2>
       </header>
       <section className='layout-area'>
-        <div></div>
         <PawLayout />
       </section>
+      {/* <section className="cards-layout-area">
+        <CardsLayout />
+      </section> */}
     </div>
   );
 }

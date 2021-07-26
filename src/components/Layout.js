@@ -21,7 +21,7 @@ function PawLayout() {
     }, []);
 
     return (
-        <div>Cards:
+        <div>The Paw:
             <div className='paw-layout'>
                 <ol className="wrapper">   {cardsData.map((card, index) => (
                     <li key={index} className={'box' + ' ' + 'a' + index}>{card.card_name} </li>

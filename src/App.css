@@ -29,7 +29,7 @@ img {
 
 /*colors: 887A7A, 8C817F, AB90A1, B69990, EDEBE6 */
 body {
-  margin: 0;
+   margin: 40px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -89,3 +89,14 @@ body {
 		grid-row: 3;
     font-size: 14px;
 	}
+
+  .card-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .card {
+    height: 600px;
+    width: 400px;
+  }
