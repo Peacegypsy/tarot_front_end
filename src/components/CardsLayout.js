@@ -22,7 +22,7 @@ function CardsLayout() {
                 <div className="card-box">   {cardsData.map((card, index) => (
                     <div key={index} className="card">{card.card_name}
                         <div>{card.card_general} </div>
-                        <img src={"https://cat-tarot-cards.herokuapp.com/" + card["image-location"]} /> </div>
+                        <img src={"https://cat-tarot-cards.herokuapp.com/" + card["image-location"]} alt="cat doing funny"/> </div>
                 ))}
                 </div>
             </div>
