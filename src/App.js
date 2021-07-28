@@ -55,7 +55,8 @@ function PawLayoutCard({card, index}) {
     padding: "20px",
     margin: "20px",
     width: "250px",
-    height: "450px"
+    height: "450px",
+    justify_content: "center"
   };
   const CardStyleBack = {
     border: "1px solid black",

@@ -52,37 +52,59 @@ body {
   grid-template-rows: 400px 550px 400px ;
   grid-auto-columns: auto;
   justify-content: center;
+  
 }
 
-
+.howard0::before {
+  font-weight: bold;
+  content: attr(title) "The Outcome";
+  color: #887A7A;
+}
 .howard0 {
   grid-column: 3 /5 ;
   grid-row: 3;
   justify-self: center;
 }
+.howard1::before {
+  font-weight: bold;
+  content: attr(title) "The Past";
+  color: #887A7A;
+}
 
 .howard1 {
   grid-column: 2 ;
   grid-row: 2 ;
+  
 }
 
+.howard2::before {
+  font-weight: bold;
+  content: attr(title) "The Present";
+  color: #887A7A;
+}
 .howard2 {
   grid-column: 3 ;
   grid-row: 1 ;
 }
 
+.howard3::before {
+  font-weight: bold;
+  content: attr(title) "Hidden Influences";
+  color: #887A7A;
+}
 .howard3 {
   grid-column: 4;
   grid-row: 1;
 }
 
+.howard4::before {
+  font-weight: bold;
+  content: attr(title) "Advice and Insight";
+  color: #887A7A;
+}
 .howard4 {
   grid-column: 5;
   grid-row: 2;
-}
-
-.howard5 {
-  background-color: #61dafb; 
 }
 
 
