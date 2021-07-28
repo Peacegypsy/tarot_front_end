@@ -3,6 +3,7 @@ import PropTypes, { func } from 'prop-types';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import '../App.css';
+// import Card from './Card'
 
 
 
@@ -21,14 +22,11 @@ function PawLayout() {
     }, []);
 
     return (
-        <div>The Paw:
-            <div className='paw-layout'>
-                <ol className="wrapper">   {cardsData.map((card, index) => (
-                    <li key={index} className={'box' + ' ' + 'a' + index}>{card.card_name} </li>
+            <div style={{ margin: "auto", width: "50%" }} className="PawCards">
+                {cardsData.map((cards, index) => (
+                    <div> layoutCard={cards} key={`card-${index}`} </div>
                 ))}
-                </ol>
             </div>
-        </div>
     )
 }
 export default PawLayout;

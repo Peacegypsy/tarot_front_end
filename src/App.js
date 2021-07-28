@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import axios from 'axios';
 import ReactCardFlip from 'react-card-flip';
+//import PawLayout from './components/Layout';
+// import PropTypes from 'prop-types';
 
 
 export default function App() {
@@ -47,11 +49,9 @@ function Home() {
   return <header className="App-header"><h2>Welcome to the Realm of the Cat</h2> <img src={"https://cat-tarot-cards.herokuapp.com/static/images/cover.jpeg"} alt="cat"/></header>;
 }
 
-function PawLayout( tarCard) {
+function PawLayout( ){
   const [cardsData, setCardsData] = useState([]);
   const [isFlipped, setIsFlipped] = useState(false);
-
-
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_BACKEND_URL}/layout/paw`)
       .then(response => {
@@ -61,20 +61,26 @@ function PawLayout( tarCard) {
         console.log('The value of error is:', error);
       })
   }, []);
-
+  const CardStyle = {
+    border: "1px solid black",
+    padding: "20px",
+    margin: "20px",
+    width: "200px",
+    height: "300px"
+  };
   return (
-    <div>The Paw:
-      <div className='paw-layout'>
-        <ol className="wrapper">   {cardsData.map((card, index) => (
-          <li key={index} className={'box' + ' ' + 'a' + index}>
-            {card.card_name}
-            <div><p>{card.name}</p>
-            </div>:<div><p>{card.card_reversed}{card.card_upright}</p></div>}
-          </li>
-        ))
-        }
-        </ol >
-      </div >
+    <div className="paw-layout">The Paw:
+        {cardsData.map((card)=>(
+          <div>{card.card_name} {card.card_general}
+            <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
+              <div className='CardFront' style={CardStyle} onMouseEnter={()=>setIsFlipped((prev) => !prev)}>
+              </div >
+              <div onMouseLeave={() => setIsFlipped((prev) => !prev)}  className="CardBack">
+              {card.card_upright} {card.card_reversed}
+              </div>
+            </ReactCardFlip>
+          </div>
+        ))}
     </div >
   )
 }
@@ -88,7 +94,13 @@ function PawLayout( tarCard) {
       </div> */
   //   </ReactCardFlip>
   // );
+  // {cardsData.map((card, index) => (
+  //   <div key={index} className={'box' + ' ' + 'a' + index}>
+  //     {card.card_name}
+  //   </div>
 
+  // ))
+  // }
 
 
 function Cards() {

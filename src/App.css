@@ -89,6 +89,13 @@ body {
   transform: rotateY(180deg);
 }
 
+.CardStyle {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+}
 /* .a5 {
   position: relative;
   width: 100%;
