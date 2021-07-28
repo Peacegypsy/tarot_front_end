@@ -7,16 +7,15 @@ import {
   Link
 } from "react-router-dom";
 import axios from 'axios';
-import Card from './components/Card';
-
+import ReactCardFlip from 'react-card-flip';
 
 
 export default function App() {
   return (
     <Router>
-      <div>
+      <div >
         <nav>
-          <ul>
+          <ul className="router-area">
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -45,12 +44,14 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <header className="App-header"><h2>Welcome to the Realm of the Cat</h2> <img src={"https://cat-tarot-cards.herokuapp.com/static/images/cover.jpeg"} alt="cat"/></header>;
 }
 
-function PawLayout() {
+function PawLayout( tarCard) {
   const [cardsData, setCardsData] = useState([]);
-  const [cardText, showCardText] = useState([]);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_BACKEND_URL}/layout/paw`)
       .then(response => {
@@ -67,17 +68,26 @@ function PawLayout() {
         <ol className="wrapper">   {cardsData.map((card, index) => (
           <li key={index} className={'box' + ' ' + 'a' + index}>
             {card.card_name}
-            {cardText.show ? <div><p>{card.name}</p>
+            <div><p>{card.name}</p>
             </div>:<div><p>{card.card_reversed}{card.card_upright}</p></div>}
           </li>
         ))
         }
-          <button onClick={() => { showCardText({ show: !cardText.show }) }}>{cardText.show ? 'Show' : 'Done'} </button>
         </ol >
       </div >
     </div >
   )
 }
+
+      /*{/* <div onMouseEnter={() => setIsFlipped((prev) => !prev)}
+          className="cardFront">
+          <img src={"https://cat-tarot-cards.herokuapp.com/" + tarCard["image-location"]} alt="cat" />
+      </div>
+      <div onMouseLeave={() => setIsFlipped((prev) => !prev)} className="cardBack">
+        <h5>This is card back</h5>
+      </div> */
+  //   </ReactCardFlip>
+  // );
 
 
 

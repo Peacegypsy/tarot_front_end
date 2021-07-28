@@ -1,11 +1,24 @@
 .App {
+  /* text-align: center;
+  background-color: EDEBE6; */
+}
+
+.router-area {
+  background-color: #B69990;
+  list-style-type: none;
   text-align: center;
-  background-color: EDEBE6;
+
+}
+
+.router-area li{
+  display: inline-block;
+  font-size: 20px;
+  padding: 15px;
 }
 
 .App-header {
   background-color: #AB90A1;
-  height: 300px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,65 +43,96 @@ img {
 /*colors: 887A7A, 8C817F, AB90A1, B69990, EDEBE6 */
 body {
   margin: 40px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
-.wrapper {
-		display: grid;
-    grid-gap: 10px;
-		grid-template-columns: 100px 100px 100px;
-    grid-auto-columns: 100px;
-		background-color: #fff;
-		list-style: none;
-	}
-    .a5 {
-    grid-column: 2 / 4;
-    grid-row: 4;
-    color: black;
-    border-radius: 5px;
-		padding: 20px;
-		font-size: 150%;
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 500px;
+  border: 1px solid #f1f1f1;
 }
-	.box {
-		background-color: #B69990;
-		color: #fff;
-		border-radius: 75px;
-		padding: 20px;
-		width: fit-content;
-    /*font-size: 150%;*/
-	}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner{
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #AB90A1;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #B69990;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+/* .a5 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 .a0  {
-		grid-column: 2 / 4 ;
-		grid-row: 5;
-    width: fit-content;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 	}
 .a1  {
-		grid-column: 2 ;
-		grid-row: 1 / 3;
-    font-size: 14px;
-    text-align: flex-start;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 	}
 .a2 {
-		grid-column: 1 ;
-		grid-row: 3  ;
-    font-size: 14px;
-    text-align: flex-start;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 	}
 .a3 {
-		grid-column: 3;
-		grid-row: 1 / 3;
-    font-size: 14px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 	}
 
 .a4 {
-		grid-column: 4 ;
-		grid-row: 3;
-    font-size: 14px;
-	}
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+	} */
 
   .card-box{
     display: grid;
