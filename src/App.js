@@ -8,12 +8,20 @@ import {
 } from "react-router-dom";
 import axios from 'axios';
 import ReactCardFlip from 'react-card-flip';
+import { FiStar } from 'react-icons/fi';
+import { BiPlanet } from 'react-icons/bi';
+import { WiStars } from 'react-icons/wi';
 
 
 export default function App() {
+  
   return (
     <Router>
       <div >
+      <div class="x">
+    <FiStar id="star" className="y"/>
+    <BiPlanet id="planet" className="y"/>
+    </div>
         <nav>
           <ul className="router-area">
             <li>
@@ -40,16 +48,22 @@ export default function App() {
         </Switch>
       </div>
     </Router>
+    
   );
+  
 }
 
 function Home() {
+
   return (
   <div id="header-container">
-    <header className="App-header">
+    <header className="App-header"><FiStar className="y"/><br/>
       <h2>Welcome to the Realm of the Cat</h2>
-    </header>
-    <img id="cover-image" src={"https://cat-tarot-cards.herokuapp.com/static/images/cover.jpeg"} alt="cat"/>
+    </header><BiPlanet className="App-logo"/>
+      <div className="image-container"> <WiStars className="App-logo3 "/><BiPlanet id="planet" className="x"/>
+      <p>< FiStar className="App-logo"/></p> 
+      <p><BiPlanet id="planet" className="x"/><WiStars className="App-logo3"/><img id="cover-image" src={"https://cat-tarot-cards.herokuapp.com/static/images/cover.jpeg"} alt="cat"/></p>
+      </div>< FiStar className="App-logo"/><br/> <br/> <WiStars className="App-logo3"/>
   </div>
   )
 }

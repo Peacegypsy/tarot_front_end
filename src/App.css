@@ -15,6 +15,8 @@ a:-webkit-any-link {
   color: #292F36;
   cursor: pointer;
   text-decoration: none;
+  font-family: 'Megrim', cursive;
+  font-size: 28px;
 }
 
 .router-area li{
@@ -24,6 +26,13 @@ a:-webkit-any-link {
   color:#292F36;
 }
 
+div#a {
+  width: 30px;
+  height:30px;
+  background-color:#508CA4;
+  position:absolute;
+  }
+
 .App-header {
   background-color: #B69990;
   display: flex;
@@ -31,17 +40,71 @@ a:-webkit-any-link {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(12px + 2vmin);
   color: white;
+  font-family: 'Megrim', cursive;
+  box-shadow: 0 4px 8px 0 #62525C, 0 6px 20px 0 #62525C;
 }
+h2 {
+  letter-spacing: .5rem;
+}
+
+.App-logo {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  color: silver;
+  position: relative;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+.App-logo2 {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  color: silver;
+  position: absolute;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+.App-logo3 {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  color: #E8D2AE;
+  position: relative;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
 #cover-image {
   height: 700px;
   width: 500px;
   margin: 25px;
+  box-shadow: 0 4px 8px 0 #62525C, 0 6px 20px 0 #62525C;
+  background-color: #7C5E9A;
 }
 #header-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   background-color: #95818D;
@@ -59,7 +122,12 @@ img {
   align-content: center;
 }
 
-/*colors: 887A7A (mid taupe), 8C817F, AB90A1 (muted grey-lilac), B69990 (warm beige), EDEBE6 (soft white) 95818D (pinkish-grey) 292F36(gunmetal) 508CA4(medium cool blue) */
+/*colors: 887A7A (mid taupe), 8C817F, AB90A1 (muted grey-lilac), B69990 (warm beige), EDEBE6 (soft white) 95818D (pinkish-grey) 292F36(gunmetal) 508CA4(medium cool blue)  font-family: 'Cinzel Decorative', cursive;
+font-family: 'WindSong', cursive; font-family: 'Meddon', cursive;
+font-family: 'Megrim', cursive;
+font-family: 'Monsieur La Doulaise', cursive; Photo by <a href="https://unsplash.com/@nacho_rochon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nacho Rochon</a> on <a href="https://unsplash.com/s/photos/stars?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+  */
 body {
   width: auto;
   margin: auto;
@@ -74,7 +142,7 @@ body {
   margin: auto;
   justify-content: center;
   background-color: #568259;
-  border: 5px solid #508CA4;
+  border: 10px solid #508CA4;
   text-align: center;
 }
 
@@ -153,4 +221,33 @@ body {
   .card {
     height: 400px;
     width: 300px;
+    border: 1px solid #489FB5;
   }
+
+#planet {
+    width: 50px;
+    height: 50px;
+    color:#14213d;
+  }
+
+#star {
+  width: 50px;
+  height: 50px;
+  color:#F4FAFF;
+}
+.x {
+  animation: x 13s linear infinite alternate;
+}
+.y {
+  animation: y 7s linear infinite alternate;
+}
+@keyframes x {
+  100% {
+    transform: translateX(calc(100vw - 100px));
+  }
+}
+@keyframes y {
+  100% {
+    transform: translateY(calc(100vh - 100px));
+  }
+} 
