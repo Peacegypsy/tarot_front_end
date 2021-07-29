@@ -44,26 +44,38 @@ export default function App() {
 }
 
 function Home() {
-  return <header className="App-header"><h2>Welcome to the Realm of the Cat</h2> <img src={"https://cat-tarot-cards.herokuapp.com/static/images/cover.jpeg"} alt="cat"/></header>;
+  return (
+  <div id="header-container">
+    <header className="App-header">
+      <h2>Welcome to the Realm of the Cat</h2>
+    </header>
+    <img id="cover-image" src={"https://cat-tarot-cards.herokuapp.com/static/images/cover.jpeg"} alt="cat"/>
+  </div>
+  )
 }
-
+  
 function PawLayoutCard({card, index}) {
   const [isFlipped, setIsFlipped] = useState(false);
-  console.log(card)
+  
   const CardStyleFront = {
-    border: "1px solid black",
+    border: "1px solid #292F36",
     padding: "20px",
     margin: "20px",
     width: "250px",
     height: "450px",
-    justify_content: "center"
+    justify_content: "center",
+    align_content: "center",
+    background_color: "#F5F3F5",
   };
   const CardStyleBack = {
-    border: "1px solid black",
+    border: "1px solid #292F36",
     padding: "20px",
     margin: "20px",
     width: "250px",
-    height: "400px"
+    height: "400px",
+    background_color: "#F5F3F5",
+    justify_content: "center",
+    align_content: "center"
   };
   return (
     <div className={"howard" + index}>
@@ -83,8 +95,6 @@ function PawLayoutCard({card, index}) {
 
 function PawLayout( ){
   const [cardsData, setCardsData] = useState([]);
-
-
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_BACKEND_URL}/layout/paw`)
       .then(response => {
@@ -95,13 +105,8 @@ function PawLayout( ){
       })
   }, []);
 
-
-
-
-
   return (
-    <div className="paw-layout">The Paw:
-
+    <div className="paw-layout">
         {cardsData.map((card, index)=>(
           <PawLayoutCard card={card} index={index}  />
         ))}
@@ -109,7 +114,6 @@ function PawLayout( ){
 
   )
 }
-
 
 
 function Cards() {
@@ -125,7 +129,7 @@ function Cards() {
   }, []);
 
   return (
-    <div>Cards:
+    <div>
       <div className='cards-layout'>
         <div className="card-box">   {cardsData.map((card, index) => (
           <div key={index} className="card">{card.card_name}

@@ -1,115 +1,142 @@
 .App {
 text-align: center;
-
 }
 
 .router-area {
-  background-color: #B69990;
+  background-color: #95818D;
+  height: 150px;
   list-style-type: none;
-  text-align: center;
+  text-align: right;
+  margin: 0%;
+  justify-content: center;
+}
 
+a:-webkit-any-link {
+  color: #292F36;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .router-area li{
   display: inline-block;
   font-size: 20px;
   padding: 15px;
+  color:#292F36;
 }
 
 .App-header {
-  background-color: #AB90A1;
-  height: 400px;
+  background-color: #B69990;
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+#cover-image {
+  height: 700px;
+  width: 500px;
+  margin: 25px;
 }
+#header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #95818D;
+}
+
 img {
   width:  200px;
   height: 300px;
   object-fit: contain;
 }
 
-.layout-area {
-  background-color: #8C817F;
+.cards-layout {
+  background-color: #F5F3F5;
+  padding: 15px;
+  align-content: center;
 }
 
-/*colors: 887A7A, 8C817F, AB90A1, B69990, EDEBE6 */
+/*colors: 887A7A (mid taupe), 8C817F, AB90A1 (muted grey-lilac), B69990 (warm beige), EDEBE6 (soft white) 95818D (pinkish-grey) 292F36(gunmetal) 508CA4(medium cool blue) */
 body {
-  margin: 40px;
+  width: auto;
+  margin: auto;
 }
 
 .paw-layout {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 15px;
   grid-template-columns: auto auto auto auto auto;
-  grid-template-rows: 400px 550px 400px ;
+  grid-template-rows: 550px 550px 550px ;
   grid-auto-columns: auto;
+  margin: auto;
   justify-content: center;
-  
+  background-color: #568259;
+  border: 5px solid #508CA4;
+  text-align: center;
 }
 
 .howard0::before {
   font-weight: bold;
   content: attr(title) "The Outcome";
-  color: #887A7A;
+  color: #292F36;
 }
 .howard0 {
   grid-column: 3 /5 ;
   grid-row: 3;
   justify-self: center;
+  background-color: #F5F3F5;
 }
 .howard1::before {
   font-weight: bold;
   content: attr(title) "The Past";
-  color: #887A7A;
+  color: #292F36;
 }
 
 .howard1 {
   grid-column: 2 ;
   grid-row: 2 ;
-  
+  background-color: #F5F3F5;
 }
 
 .howard2::before {
   font-weight: bold;
   content: attr(title) "The Present";
-  color: #887A7A;
+  color: #292F36;
 }
 .howard2 {
   grid-column: 3 ;
   grid-row: 1 ;
+  background-color: #F5F3F5;
 }
 
 .howard3::before {
   font-weight: bold;
   content: attr(title) "Hidden Influences";
-  color: #887A7A;
+  color: #292F36;
 }
 .howard3 {
   grid-column: 4;
   grid-row: 1;
+  background-color: #F5F3F5;
 }
 
 .howard4::before {
   font-weight: bold;
   content: attr(title) "Advice and Insight";
-  color: #887A7A;
+  color: #292F36;
 }
 .howard4 {
   grid-column: 5;
   grid-row: 2;
+  background-color: #F5F3F5;
 }
 
 
 .CardStyle {
-  border: 1px solid black;
+  border: 1px solid #292F36;
   padding: 20px;
   margin: 20px;
   width: 200px;
@@ -120,6 +147,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
+    text-align: center;
   }
 
   .card {
